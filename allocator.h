@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 
-#define ALLOCATOR_ALIGN 4
+#define ALLOCATOR_ALIGN 8
 
 typedef struct {
     /** TODO */
