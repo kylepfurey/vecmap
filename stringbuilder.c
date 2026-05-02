@@ -4,10 +4,10 @@
 
 #include "stringbuilder.h"
 #include <stdlib.h>
+#include <stdarg.h>
 #include <string.h>
 #include <ctype.h>
 #include <assert.h>
-#include <stdarg.h>
 
 bool string_new(string_t *self, const char *str) {
     assert(self != NULL);
