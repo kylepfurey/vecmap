@@ -13,7 +13,7 @@ bool allocator_contains(const allocator *self, const void *ptr) {
     assert(self->buffer != NULL);
     assert(self->size > 0);
     assert(ptr != NULL);
-    return (ptr >= self->buffer) && (ptr < (((uint8_t) self->buffer) + self->size));
+    return (ptr >= self->buffer) && (ptr < (((const uint8_t *) self->buffer) + self->size));
 }
 
 void allocator_new(allocator_t *self, void *buffer, size_t size) {
