@@ -9,7 +9,7 @@
 
 #define ALLOCATOR_ALIGN 8
 
-typedef union block_t {
+typedef struct block_t {
     size_t size;
     struct block_t *next;
 } block_t;
