@@ -25,3 +25,6 @@ void *allocator_realloc(allocator_t *self, void *ptr, size_t size) {
 
 void allocator_free(allocator_t *self, void *ptr) {
 }
+
+void allocator_clear(allocator_t *self) {
+}
