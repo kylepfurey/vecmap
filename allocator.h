@@ -10,7 +10,14 @@
 #define ALLOCATOR_ALIGN 8
 
 typedef struct {
-    /** TODO */
+    size_t size;
+    block_t *next;
+} block_t;
+
+typedef struct {
+    size_t size;
+    void *buffer;
+    block_t *free;
 } allocator_t;
 
 #ifdef __cplusplus
