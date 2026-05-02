@@ -9,9 +9,9 @@
 
 #define ALLOCATOR_ALIGN 8
 
-typedef struct {
+typedef struct block_t {
     size_t size;
-    block_t *next;
+    struct block_t *next;
 } block_t;
 
 typedef struct {
