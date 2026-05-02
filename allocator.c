@@ -13,13 +13,13 @@ bool allocator_contains(const allocator *self, const void *ptr) {
     assert(self->buffer != NULL);
     assert(self->size > 0);
     assert(ptr != NULL);
-    return (ptr >= self->buffer) && (ptr < (((const uint8_t *) self->buffer) + self->size));
+    return (ptr >= ((const block_t *) self->buffer + 1) && (ptr < ((const uint8_t *) self->buffer + self->size));
 }
 
 void allocator_new(allocator_t *self, void *buffer, size_t size) {
     assert(self != NULL);
     assert(buffer != NULL);
-    assert(size > 0);
+    assert(size > sizeof(block_t));
     memset(buffer, 0, size);
     block_t *free = (block_t *) buffer;
     free->size = size - sizeof(block_t);
@@ -41,7 +41,9 @@ void *allocator_malloc(allocator_t *self, size_t size) {
         return NULL;
     }
     self->free = block->next;
+    block->size = size;
     // TODO
+    return block + 1;
 }
 
 void *allocator_calloc(allocator_t *self, size_t n, size_t size) {
