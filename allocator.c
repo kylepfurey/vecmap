@@ -92,7 +92,7 @@ void allocator_clear(allocator_t *self) {
     assert(self->buffer != NULL);
     assert(self->size > 0);
     memset(self->buffer, 0, self->size);
-    block_t *free = (block_t *) buffer;
-    free->size = size - sizeof(block_t);
+    block_t *free = (block_t *) self->buffer;
+    free->size = self->size - sizeof(block_t);
     self->free = free;
 }
