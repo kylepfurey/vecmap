@@ -17,11 +17,11 @@ typedef struct {
 extern "C" {
 #endif
 
-bool allocator_new(allocator_t *self, size_t size);
-void *allocator_borrow(allocator_t *self, size_t size);
-void *allocator_move(allocator_t *self, void *memory, size_t size);
-void allocator_return(allocator_t *self, void *memory);
-void allocator_free(allocator_t *self);
+void allocator_new(allocator_t *self, void *buffer, size_t size);
+void *allocator_malloc(allocator_t *self, size_t size);
+void *allocator_calloc(allocator_t *self, size_t n, size_t size);
+void *allocator_realloc(allocator_t *self, void *ptr, size_t size);
+void allocator_free(allocator_t *self, void *ptr);
 
 #ifdef __cplusplus
 }
