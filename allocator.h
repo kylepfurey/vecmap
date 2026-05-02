@@ -15,8 +15,8 @@ typedef struct {
 } block_t;
 
 typedef struct {
-    size_t size;
     void *buffer;
+    size_t size;
     block_t *free;
 } allocator_t;
 
