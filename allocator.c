@@ -40,8 +40,6 @@ void *allocator_malloc(allocator_t *self, size_t size) {
     if (block == NULL || size > block->size) {
         return NULL;
     }
-    self->free = block->next;
-    block->size = size;
     // TODO
     return block + 1;
 }
