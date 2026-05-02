@@ -6,11 +6,11 @@
 #define ALLOCATOR_H
 
 #include <stddef.h>
-#include <stdbool.h>
 
-#define ALLOCATOR_ALIGNMENT (sizeof(void *))
+#define ALLOCATOR_ALIGN (sizeof(void *))
 
 typedef struct {
+    /** TODO */
 } allocator_t;
 
 #ifdef __cplusplus
