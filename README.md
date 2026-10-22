@@ -1,4 +1,4 @@
-# vecmap
+# vecmap 1.1
 Minimal C99 generic data structure library.
 
 Includes:
@@ -11,3 +11,6 @@ Includes:
 - `shared.h`
 - `signal.h`
 - `stack.h`
+
+Simple API:
+ - `vecmap.h`
